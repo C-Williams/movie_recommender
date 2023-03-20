@@ -192,7 +192,7 @@ if nav == "Cosine Similarity":
     * \+ We don't need in depth knowledge of the culture because the embeddings are \
         automatically learned.
     * \+ The model can help users discover new interests.
-    * \- if an item is not seen during training, the system can't create an embedding for \
+    * \- If an item is not seen during training, the system can't create an embedding for \
         it and can't query the model with this item.
     * \- Side features are difficult to include. For movie recommendations, the side features \
         might include country or age.
