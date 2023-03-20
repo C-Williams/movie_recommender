@@ -8,9 +8,7 @@ import streamlit as st
 from streamlit import session_state as session
 
 from recommender import recommend_random, recommend_with_NMF, recommend_neighborhood
-from utils import movies, Ratings
-
-rating_list = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
+from utils import movies, Ratings, rating_list
 
 nav = st.sidebar.radio(
     "Please chose one of the following options:",
@@ -36,7 +34,9 @@ if nav == "See Movies":
     These values with the average rating per movie.
     """
     )
+
     st.write(Ratings.head(30))
+
 
 if nav == "Random":
     st.markdown(
@@ -50,15 +50,16 @@ if nav == "Random":
     """
     )
 
-    movie_list = recommend_random()
-
     st.markdown(
     """ ##### Tonight you should watch...
     """
     )
+        
+    movie_list = recommend_random()
 
     for i in movie_list:
         st.markdown(i)
+
 
 if nav == "NMF":
     st.markdown(

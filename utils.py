@@ -15,6 +15,8 @@ import pickle
 
 from sklearn.metrics.pairwise import cosine_similarity
 
+rating_list = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
+
 movies = pd.read_csv('./data/movies.csv', index_col=0) 
 movies_list = movies.title.to_list()
 
